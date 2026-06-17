@@ -33,7 +33,6 @@ public class ParamTests extends TestBase {
             @Tag("negative")
     })
     void phoneFieldValidation(String searchQuery, String searchMistake) {
-        open("/person-auth-form");
 
         $("#iPhoneOrEmail").setValue(searchQuery);
         $("#iPassword").setValue("123456789");
@@ -47,10 +46,10 @@ public class ParamTests extends TestBase {
     @ValueSource(strings = {
             "",
             "      ",
-            "123456",
-            "abcdef",
+            "123456789",
+            "abcdefFGH",
             "пароль",
-            "@#$%"
+            "@#$%12589PPP"
     })
     @ParameterizedTest(name = "Проверка валидации поля пароль: {0}")
     @Tags({
@@ -58,9 +57,8 @@ public class ParamTests extends TestBase {
             @Tag("negative")
     })
     void passwordFieldValidation(String passwordQuery) {
-        open("/person-auth-form");
 
-        $("#iPhoneOrEmail").setValue("70000000000");
+        $("#iPhoneOrEmail").setValue("79999999999");
         $("#iPassword").setValue(passwordQuery);
 
         $("#cSignIn").click();
@@ -79,7 +77,6 @@ public class ParamTests extends TestBase {
             @Tag("negative")
     })
     void passwordLoginFieldValidation(String searchQuery, String passwordQuery, String searchMistake) {
-        open("/person-auth-form");
 
         $("#iPhoneOrEmail").setValue(searchQuery);
         $("#iPassword").setValue(passwordQuery);
