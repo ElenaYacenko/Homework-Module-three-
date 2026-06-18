@@ -32,6 +32,7 @@ public class ParamTests extends TestBase {
             @Tag("WEB"),
             @Tag("negative")
     })
+
     void phoneFieldValidation(String searchQuery, String searchMistake) {
 
         $("#iPhoneOrEmail").setValue(searchQuery);
@@ -56,6 +57,7 @@ public class ParamTests extends TestBase {
             @Tag("WEB"),
             @Tag("negative")
     })
+
     void passwordFieldValidation(String passwordQuery) {
 
         $("#iPhoneOrEmail").setValue("79999999999");

@@ -21,8 +21,7 @@ public class TestBase {
 
     @BeforeEach
     void setUp() {
-        open("/person-auth-form");  // ← Открываем страницу перед каждым тестом
-    }
+        open("/person-auth-form");
 
     @AfterEach
     void afterEach() {
